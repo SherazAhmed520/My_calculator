@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY Calculator</title>
+    <style>
+        .container {
+
+            display: flex;
+            margin: 180px auto;
+            justify-content: center;
+        }
+
+        .frame {
+            position: absolute;
+            width: 250px;
+            height: 340px;
+            border: 5px solid;
+            border-radius: 7px;
+            background-color: azure;
+            box-shadow: rgb(63, 194, 255) 2px 5px 5px 5px;
+        }
+
+        .btnfn {
+            height: 50px;
+            width: 50px;
+            border-radius: 25px;
+            margin-bottom: 3px;
+            font-size: larger;
+            color: white;
+            background-color: black;
+        }
+
+        .btnfn:hover {
+            background-color: aliceblue;
+            box-shadow: gray 3px 3px 0px 0px;
+            border-color: cyan;
+            color: black;
+            transition: 0.5s;
+        }
+
+        .btn {
+            /* margin: auto;
+            justify-content: center; */
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        #inputtext {
+            /* border: 1px solid ; */
+            background-color: aquamarine;
+            width: 200px;
+            height: 45px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            text-align: right;
+            font-size: xx-large;
+        }
+
+
+        @media (max-width: 1200px) {
+            .frame {
+                display: block;
+            }
+        }
+       
+        /* .btneq {
+            width: 106px;
+            height: 35px;
+            border-radius: 15px;
+            margin-top: 3px;
+        }
+
+        .btneq:hover {
+            background-color: aliceblue;
+            box-shadow: rgb(157, 255, 92) 3px 3px 0px 0px;
+            border-color: cyan;
+        } */
+
+    </style>
+</head>
+
+<body style="background-image: url(calc.jpg); background-repeat: no-repeat; background-size: 1540px 800px;">
+    <div class="container">
+        <div class="frame">
+                <div class="btn">
+                    <input type="text" id="inputtext" placeholder="0" />
+
+                    <button type="submit" onclick="calculate('+')" class="btnfn">+</button>
+                    <button type="submit" onclick="calculate(7)" class="btnfn">7</button>
+                    <button type="submit" onclick="calculate(8)" class="btnfn">8</button>
+                    <button type="submit" onclick="calculate(9)" class="btnfn">9</button>
+                    <button type="submit" onclick="calculate('-')" class="btnfn">-</button>
+                    <button type="submit" onclick="calculate(4)" class="btnfn">4</button>
+                    <button type="submit" onclick="calculate(5)" class="btnfn">5</button>
+                    <button type="submit" onclick="calculate(6)" class="btnfn">6</button>
+                    <button type="submit" onclick="calculate('*')" class="btnfn">*</button>
+                    <button type="submit" onclick="calculate(1)" class="btnfn">1</button>
+                    <button type="submit" onclick="calculate(2)" class="btnfn">2</button>
+                    <button type="submit" onclick="calculate(3)" class="btnfn">3</button>
+                    <button type="submit" onclick="calculate('/')" class="btnfn">/</button>
+                    <button type="submit" onclick="calculate('%')" class="btnfn">%</button>
+                    <button type="submit" onclick="calculate(0)" class="btnfn">0</button>
+                    <button type="submit" onclick="calculate('.')" class="btnfn">.</button>
+                    <!-- <button type="submit" onclick="Math.pow(number)" class="btnfn">x²</button> -->
+                    <button type="submit" onclick="clr()" class="btnfn">C</button>
+                    <button type="submit" onclick="del()" class="btnfn">DEL</button>
+                    <button type="submit" onclick="Back('←')" class="btnfn">←</button>
+
+                    <button type="submit" onclick="Result()" class="btnfn">=</button>
+
+                </div>
+            </div>
+    </div>
+    <p>&copy; Copyright 2023 Sheraz_Project</p>
+</body>
+<script>
+    let result = document.getElementById("inputtext");
+    let calculate = (number) => {   //calculate = function(){}
+        result.value += number;
+
+    }
+    let Result = () => {
+
+        try {
+            result.value = eval(result.value)
+        }
+        catch (error) {
+            alert("Enter the valid input")
+        }
+    }
+    function clr() {
+        result.value = " ";
+    }
+    function del() {
+        result.value = result.value.slice(0, -1);
+    }
+    function Back() {
+        // var result = document.getElementById('res');
+        // var ev = document.getElementById('inputtext');
+        ev.value = ev.value.slice(0,-1);
+    }
+
+</script>
+
+</html>
