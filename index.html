@@ -61,8 +61,8 @@
         }
 
 
-        @media (max-width: 1200px) {
-            .frame {
+        @media (max-width: 360px) {
+            .body {
                 display: block;
             }
         }
@@ -115,7 +115,6 @@
                 </div>
             </div>
     </div>
-    <p>&copy; Copyright 2023 Sheraz_Project</p>
 </body>
 <script>
     let result = document.getElementById("inputtext");
@@ -140,7 +139,7 @@
     }
     function Back() {
         // var result = document.getElementById('res');
-        // var ev = document.getElementById('inputtext');
+        var ev = document.getElementById('inputtext');
         ev.value = ev.value.slice(0,-1);
     }
 
